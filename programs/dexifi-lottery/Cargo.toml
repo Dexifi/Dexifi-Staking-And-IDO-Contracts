@@ -1,0 +1,22 @@
+[package]
+name = "dexifi-lottery"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "dexifi_lottery"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { git = "https://github.com/coral-xyz/anchor" }
+anchor-spl = { git = "https://github.com/coral-xyz/anchor" }
+sha2 = "0.10.6"
+dexifi-staking = { path = "../dexifi-staking", features = ["cpi"] }
